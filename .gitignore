@@ -1,0 +1,6 @@
+# Exclude sensitive environment configuration
+.env
+aniask.db
+
+# Exclude node package dependencies (highly recommended)
+node_modules
