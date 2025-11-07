@@ -16,11 +16,11 @@ db.serialize(() => {
   });
 
 
-  db.run(`CREATE TABLE IF NOT EXISTS messages (id INTEGER PRIMARY KEY AUTOINCREMENT, chat_id INTEGER NOT NULL, sender TEXT NOT NULL,text TEXT NOT NULL, FOREIGN KEY (chat_id) REFERENCES chats (id) ON DELETE CASCADE)`, (err) => {
+  db.run(`CREATE TABLE IF NOT EXISTS messages (id INTEGER PRIMARY KEY AUTOINCREMENT,chat_id INTEGER NOT NULL,sender TEXT NOT NULL,text TEXT NOT NULL,FOREIGN KEY (chat_id) REFERENCES chats (id) ON DELETE CASCADE)`, (err) => {
     if (err) {
       return console.error("Error creating messages table:", err.message);
     }
-    console.log("Messages table is ready.");
+    console.log("Messages tabe is ready.");
   });
 });
 
