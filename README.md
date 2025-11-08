@@ -1,6 +1,8 @@
 Aniask Backend: Secure API Server
 Companion Repository: This server is designed to be used with the Aniask Frontend Repository.
+
 AniAsk Frontend Repo: https://github.com/Ali-Abdullahi/AniAI.git
+
 Project Description
 This repository contains the Node.js and Express.js backend server for the Aniask application. Its primary role is to serve as secure middleware between the client and the Gemini API, protecting sensitive keys and managing user data persistence.
 The server handles all conversation logic, securely connects to the AI model, and stores chat history and metadata in a SQL database.
