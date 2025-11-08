@@ -13,7 +13,7 @@ A Gemini API Key from Google AI Studio.
 Installation and Setup:
 Follow these steps to get the server running:
 Clone the Repository:
-git clone [git@github.com:Ali-Abdullahi/AniAIBackEnd.git]
+git clone [https://github.com/Ali-Abdullahi/AniAIBackEnd.git]
 cd AniAIBackEnd
 
 Install Dependencies:
