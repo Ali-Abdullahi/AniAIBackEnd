@@ -3,7 +3,7 @@ const cors= require('cors');
 const { GoogleGenerativeAI } = require("@google/generative-ai"); 
 const dotenv= require('dotenv');
 const app= express()
-const PORT=3000;
+const PORT = process.env.PORT || 3000;
 const sqlite3 = require('sqlite3').verbose();
 dotenv.config();
 const GEMINI_API_KEY=process.env.GEMINI_API_KEY;
@@ -17,6 +17,11 @@ const db = new sqlite3.Database('./aniask.db', (err) => {
     }
     console.log('Successfully connected to the aniask.db database in server.');
   });
+
+db.serialize(() => {
+  db.run(`CREATE TABLE IF NOT EXISTS chats (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL)`);
+  db.run(`CREATE TABLE IF NOT EXISTS messages (id INTEGER PRIMARY KEY AUTOINCREMENT, chat_id INTEGER NOT NULL, sender TEXT NOT NULL, text TEXT NOT NULL, FOREIGN KEY (chat_id) REFERENCES chats (id) ON DELETE CASCADE)`);
+});
 
 
   app.post('/chats', (req, res) => {
