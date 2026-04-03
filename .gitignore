@@ -4,3 +4,6 @@ aniask.db
 
 # Exclude node package dependencies (highly recommended)
 node_modules
+
+# Mac system files
+.DS_Store
